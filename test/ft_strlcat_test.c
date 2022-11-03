@@ -6,7 +6,7 @@
 /*   By: jhesso <jhesso@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:01:49 by jhesso            #+#    #+#             */
-/*   Updated: 2022/10/26 19:14:07 by jhesso           ###   ########.fr       */
+/*   Updated: 2022/10/27 12:10:40 by jhesso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,34 +17,19 @@ size_t apple_strlcat(char *dst, const char *src, size_t siz);
 
 int	main(void)
 {
-	char	a[] = " World!";
-	char	b[50] = "Hello"; //dest
-	char	c[] = " World!";
-	char	d[] = "Hello"; //dest
-	char	e[] = " World!";
-	char	f[] = "Hello"; //dest
-	char	g[] = " World!";
-	char	h[] = "Hello"; //dest
+	char	src[] = " World!";
+	char	dst[13] = "Hello";
 	size_t	ret;
-	size_t	ft_ret;
-	size_t	test_ft_ret;
-	size_t	apple_ret;
+	size_t	dstsize;
 
-	printf("dest before strlcat(): %s\n", b);
-	printf("dest before ft_strlcat(): %s\n", d);
-	printf("dest before test_ft_strlcat(): %s\n", f);
-	printf("dest before apple_strlcat(): %s\n", h);
-	ret = strlcat(b, a, 6);
-	ft_ret = ft_strlcat(d, c, 6);
-	test_ft_ret = test_ft_strlcat(f, e, 6);
-	apple_ret = apple_strlcat(h, g, 6);
-	printf("dest after strlcat(): %s\n", b);
-	printf("dest after ft_strlcat(): %s\n", d);
-	printf("dest after test_ft_strlcat(): %s\n", f);
-	printf("dest after apple_strlcat(): %s\n", h);
+	dstsize = 3;
+	ret = strlcat(dst, src, dstsize);
+	printf("dest after strlcat(): %s\n", dst);
+	printf("\n----------------------------------------\n\n");
 	printf("Return value of strlcat: %zu\n", ret);
-	printf("Return value of ft_strlcat: %zu\n", ft_ret);
-	printf("Return value of test_ft_strlcat: %zu\n", test_ft_ret);
-	printf("Return value of apple_strlcat: %zu\n", apple_ret);
+	// printf("strlen(dst): %zu\n", strlen(dst));
+	// printf("strlen(src): %zu\n", strlen(src));
+	// printf("ft_strlen(dst): %zu\n", ft_strlen(dst));
+	// printf("ft_strlen(src): %zu\n", ft_strlen(src));
 	return (0);
 }

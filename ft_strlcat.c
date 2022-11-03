@@ -6,7 +6,7 @@
 /*   By: jhesso <jhesso@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 15:47:34 by jhesso            #+#    #+#             */
-/*   Updated: 2022/11/02 13:03:42 by jhesso           ###   ########.fr       */
+/*   Updated: 2022/11/03 13:57:24 by jhesso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	const char	*src_cpy;
 	char		*dst_cpy;
 	size_t		dst_len;
-	size_t			i;
+	size_t		i;
 	size_t		src_len;
 
 	src_cpy = src;
