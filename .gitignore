@@ -1,0 +1,8 @@
+test/
+sandbox/
+.DS_store
+42
+a.out
+libft.a
+notes.md
+*.o
