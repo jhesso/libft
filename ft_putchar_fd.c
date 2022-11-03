@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   isalpha.c                                          :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jhesso <jhesso@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jhesso <jhesso@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/24 16:05:52 by jhesso            #+#    #+#             */
-/*   Updated: 2022/10/24 16:11:23 by jhesso           ###   ########.fr       */
+/*   Created: 2022/11/02 13:17:17 by jhesso            #+#    #+#             */
+/*   Updated: 2022/11/02 13:18:14 by jhesso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <ctype.h>
+#include "libft.h"
 
-int	main(void)
+void	ft_putchar_fd(char c, int fd)
 {
-	char	c;
-	int		ret;
-
-	printf("Enter a character: ");
-	scanf("%c", &c);
-	ret = isalpha(c);
-	printf("Return value of isalpha(%c) is: %d\n", c, ret);
+	write(fd, &c, 1);
 }

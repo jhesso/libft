@@ -6,7 +6,7 @@
 /*   By: jhesso <jhesso@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 20:00:01 by jhesso            #+#    #+#             */
-/*   Updated: 2022/10/28 20:04:33 by jhesso           ###   ########.fr       */
+/*   Updated: 2022/10/31 15:52:36 by jhesso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	char	*str;
+	unsigned char	*str;
 
-	str = (char *)s;
+	str = (unsigned char *)s;
 	while (n != 0)
 	{
 		if (*str == (unsigned char)c)

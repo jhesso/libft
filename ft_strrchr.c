@@ -6,7 +6,7 @@
 /*   By: jhesso <jhesso@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 11:55:40 by jhesso            #+#    #+#             */
-/*   Updated: 2022/10/28 12:23:24 by jhesso           ###   ########.fr       */
+/*   Updated: 2022/10/31 16:00:32 by jhesso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strrchr(const char *s, int c)
 	tmp--;
 	start++;
 	if (c == '\0')
-		return (--tmp);
+		return (tmp);
 	while (start-- != 0)
 	{
 		if (*tmp == c)

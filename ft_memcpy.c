@@ -6,7 +6,7 @@
 /*   By: jhesso <jhesso@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 11:55:05 by jhesso            #+#    #+#             */
-/*   Updated: 2022/10/26 12:23:39 by jhesso           ###   ########.fr       */
+/*   Updated: 2022/10/31 15:49:40 by jhesso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	char	*tmp_src;
 	char	*tmp_dst;
 
+	if (dst == NULL && src == NULL)
+		return (NULL);
 	tmp_src = (char *)src;
 	tmp_dst = (char *)dst;
 	while (n--)

@@ -6,7 +6,7 @@
 /*   By: jhesso <jhesso@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 22:10:59 by jhesso            #+#    #+#             */
-/*   Updated: 2022/10/28 22:17:28 by jhesso           ###   ########.fr       */
+/*   Updated: 2022/11/02 12:06:37 by jhesso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 int	ft_atoi(const char *str)
 {
-	int	n;
-	int	sign;
+	long	n;
+	long	sign;
 
 	sign = 1;
 	n = 0;
-	while (*str == 32 || (*str >= 9 && *str <= 12))
+	while (*str == 32 || (*str >= 9 && *str <= 13))
 		str++;
 	if (*str == '-')
 		sign = -1;
@@ -30,5 +30,9 @@ int	ft_atoi(const char *str)
 		n = n * 10 + *str - '0';
 		str++;
 	}
-	return (n * sign);
+	// if (n < -9223372036854775808)
+	// 	return (0);
+	// else if (n > 9223372036854775807)
+	// 	return (-1);
+	return ((int)n * (int)sign);
 }

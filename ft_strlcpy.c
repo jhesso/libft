@@ -6,7 +6,7 @@
 /*   By: jhesso <jhesso@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 14:16:06 by jhesso            #+#    #+#             */
-/*   Updated: 2022/10/26 15:15:07 by jhesso           ###   ########.fr       */
+/*   Updated: 2022/11/01 13:07:28 by jhesso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	i = 0;
 	if (dstsize != 0)
 	{
-		while ((i < dstsize) && src[i] != '\0')
+		while ((i < dstsize - 1) && src[i] != '\0')
 		{
 			dst[i] = src[i];
 			i++;

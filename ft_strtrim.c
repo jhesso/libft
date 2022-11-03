@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memcpy.c                                           :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jhesso <jhesso@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/26 11:43:56 by jhesso            #+#    #+#             */
-/*   Updated: 2022/10/26 11:53:09 by jhesso           ###   ########.fr       */
+/*   Created: 2022/10/31 14:18:01 by jhesso            #+#    #+#             */
+/*   Updated: 2022/10/31 15:54:06 by jhesso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
-int	main(void)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	dst[50] = "github.com/jhesso";
-	char	src[50] = "This is a test string";
-	size_t	len = 5;
-	
-	printf("dst before memcpy: %s\n", dst);
-	memcpy(dst, src, len);
-	printf("dst after memcpy: %s\n", dst);
-	return (0);
+	char	*ret;
+	int		len;
+	int		i;
+	int		j;
+
+	if (s1 == NULL)
+		return (NULL);
+	len = 0;
+	while (s1[i] != '\0')
+	{
+		if ()
+		i++;
+	}
+	i = 0;
+	j = 0;
 }

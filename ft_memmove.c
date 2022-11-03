@@ -6,7 +6,7 @@
 /*   By: jhesso <jhesso@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 13:55:43 by jhesso            #+#    #+#             */
-/*   Updated: 2022/10/26 14:02:31 by jhesso           ###   ########.fr       */
+/*   Updated: 2022/10/31 17:18:53 by jhesso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,26 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char	*tmp_dst;
-	char	*tmp_src;
-	size_t	i;
+	unsigned char		*tmp_dst;
+	const unsigned char	*tmp_src;
+	size_t				i;
 
+	if (dst == NULL && src == NULL)
+		return (NULL);
 	i = 0;
-	tmp_dst = (char *)dst;
-	tmp_src = (char *)src;
-	if (tmp_dst > tmp_src)
-		while (len--)
+	tmp_dst = (unsigned char *)dst;
+	tmp_src = (const unsigned char *)src;
+	if (tmp_dst > tmp_src && len > 0)
+		while (len-- > 0)
+		{
+			// len--;
 			tmp_dst[len] = tmp_src[len];
+		}
 	else if (tmp_dst < tmp_src)
-		while (i++ < len)
+		while (i < len)
+		{
 			tmp_dst[i] = tmp_src[i];
+			i++;
+		}
 	return (tmp_dst);
 }
