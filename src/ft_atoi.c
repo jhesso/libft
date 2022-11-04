@@ -6,7 +6,7 @@
 /*   By: jhesso <jhesso@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 22:10:59 by jhesso            #+#    #+#             */
-/*   Updated: 2022/11/03 14:54:00 by jhesso           ###   ########.fr       */
+/*   Updated: 2022/11/04 14:30:44 by jhesso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_atoi(const char *str)
 {
-	long	n;
-	long	sign;
+	long int	n;
+	long int	sign;
 
 	sign = 1;
 	n = 0;
@@ -29,10 +29,12 @@ int	ft_atoi(const char *str)
 	{
 		n = n * 10 + *str - '0';
 		str++;
+		if (n < 0)
+		{
+			if (sign == -1)
+				return (0);
+			return (-1);
+		}
 	}
-	// if (n < -9223372036854775808)
-	// 	return (0);
-	// else if (n > 9223372036854775807)
-	// 	return (-1);
 	return ((int)n * (int)sign);
 }

@@ -6,7 +6,7 @@
 /*   By: jhesso <jhesso@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 14:45:10 by jhesso            #+#    #+#             */
-/*   Updated: 2022/11/03 16:22:35 by jhesso           ###   ########.fr       */
+/*   Updated: 2022/11/04 14:36:04 by jhesso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@
 // 	return (ft_revstr(str));
 // }
 
-int nlen(long n)
+static int nlen(long n)
 {
 	int	len;
 

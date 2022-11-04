@@ -6,7 +6,7 @@
 #    By: jhesso <jhesso@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/29 15:34:36 by jhesso            #+#    #+#              #
-#    Updated: 2022/11/03 15:50:08 by jhesso           ###   ########.fr        #
+#    Updated: 2022/11/04 14:52:03 by jhesso           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,21 +14,21 @@ NAME = libft.a
 
 FLAGS = -Wall -Wextra -Werror
 
-SRC = ./ft_atoi.c ./ft_bzero.c ./ft_calloc.c ./ft_isalnum.c ./ft_isalpha.c\
-			./ft_isascii.c ./ft_isdigit.c ./ft_isprint.c ./ft_memchr.c\
-			./ft_memcmp.c ./ft_memcpy.c ./ft_memmove.c ./ft_memset.c ./ft_strchr.c\
-			./ft_strdup.c ./ft_strlcat.c ./ft_strlcpy.c ./ft_strlen.c ./ft_strncmp.c\
-			./ft_strnstr.c ./ft_strrchr.c ./ft_tolower.c ./ft_toupper.c ./ft_substr.c\
-			./ft_strjoin.c ./ft_putchar_fd.c ./ft_putstr_fd.c ./ft_putendl_fd.c\
-			./ft_putnbr_fd.c ./ft_itoa.c
+SRC = ./src/ft_atoi.c ./src/ft_bzero.c ./src/ft_calloc.c ./src/ft_isalnum.c ./src/ft_isalpha.c\
+			./src/ft_isascii.c ./src/ft_isdigit.c ./src/ft_isprint.c ./src/ft_memchr.c\
+			./src/ft_memcmp.c ./src/ft_memcpy.c ./src/ft_memmove.c ./src/ft_memset.c ./src/ft_strchr.c\
+			./src/ft_strdup.c ./src/ft_strlcat.c ./src/ft_strlcpy.c ./src/ft_strlen.c ./src/ft_strncmp.c\
+			./src/ft_strnstr.c ./src/ft_strrchr.c ./src/ft_tolower.c ./src/ft_toupper.c ./src/ft_substr.c\
+			./src/ft_strjoin.c ./src/ft_putchar_fd.c ./src/ft_putstr_fd.c ./src/ft_putendl_fd.c\
+			./src/ft_putnbr_fd.c ./src/ft_itoa.c
 
-OBJ = ./ft_atoi.o ./ft_bzero.o ft_calloc.o ft_isalnum.o ft_isalpha.o\
-			ft_isascii.o ft_isdigit.o ft_isprint.o ft_memchr.o\
-			ft_memcmp.o ft_memcpy.o ft_memmove.o ft_memset.o ft_strchr.o\
-			ft_strdup.o ft_strlcat.o ft_strlcpy.o ft_strlen.o ft_strncmp.o\
-			ft_strnstr.o ft_strrchr.o ft_tolower.o ft_toupper.o ./ft_substr.o\
-			./ft_strjoin.o ./ft_putchar_fd.o ./ft_putstr_fd.o ./ft_putendl_fd.o\
-			./ft_putnbr_fd.o ./ft_itoa.o
+OBJ = ./obj/ft_atoi.o ./obj/ft_bzero.o ./obj/calloc.o ./obj/isalnum.o ./obj/isalpha.o\
+			./obj/isascii.o ./obj/isdigit.o ./obj/isprint.o ./obj/memchr.o\
+			./obj/memcmp.o ./obj/memcpy.o ./obj/memmove.o ./obj/memset.o ./obj/strchr.o\
+			./obj/strdup.o ./obj/strlcat.o ./obj/strlcpy.o ./obj/strlen.o ./obj/strncmp.o\
+			./obj/strnstr.o ./obj/strrchr.o ./obj/tolower.o ./obj/toupper.o ./obj/substr.o\
+			./obj/strjoin.o ./obj/putchar_fd.o ./obj/putstr_fd.o ./obj/putendl_fd.o\
+			./obj/putnbr_fd.o ./obj/itoa.o
 
 INCLUDE = libft.h
 
@@ -38,6 +38,7 @@ $(NAME): object lib
 
 object:
 	cc $(FLAGS) -c $(SRC)
+	mv *.o ./obj/
 
 lib:
 	ar rc $(NAME) $(OBJ)
