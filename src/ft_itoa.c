@@ -6,11 +6,11 @@
 /*   By: jhesso <jhesso@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 14:45:10 by jhesso            #+#    #+#             */
-/*   Updated: 2022/11/04 14:36:04 by jhesso           ###   ########.fr       */
+/*   Updated: 2022/11/07 22:33:50 by jhesso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+// #include "libft.h"
 
 // char	*ft_revstr(char *str)
 // {
@@ -67,7 +67,7 @@
 // 	return (ft_revstr(str));
 // }
 
-static int nlen(long n)
+static int nlen(long int n)
 {
 	int	len;
 
@@ -87,16 +87,15 @@ static int nlen(long n)
 
 char	*ft_itoa(int n)
 {
-	char	*str;
-	long	nbr;
-	int		i;
+	char		*str;
+	long int	nbr;
+	int			i;
 
 	nbr = n;
 	i = nlen(nbr);
-	str = malloc(sizeof(char) * i + 1);
-	if (str == NULL)
+	if (!(str = malloc(sizeof(char) * (i + 1))))
 		return (NULL);
-	str[i] = '\0';
+	str[i--] = '\0';
 	if (nbr == 0)
 	{
 		str[0] = '0';
@@ -109,7 +108,7 @@ char	*ft_itoa(int n)
 	}
 	while (nbr > 0)
 	{
-		str[i] = 48 + (nbr % 10);
+		str[i] = '0' + (nbr % 10);
 		nbr = nbr / 10;
 		i--;
 	}

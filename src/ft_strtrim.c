@@ -6,11 +6,11 @@
 /*   By: jhesso <jhesso@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 14:18:01 by jhesso            #+#    #+#             */
-/*   Updated: 2022/10/31 15:54:06 by jhesso           ###   ########.fr       */
+/*   Updated: 2022/11/07 21:54:18 by jhesso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+// #include "libft.h"
 
 char	*ft_strtrim(char const *s1, char const *set)
 {

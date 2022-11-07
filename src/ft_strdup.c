@@ -6,11 +6,11 @@
 /*   By: jhesso <jhesso@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 14:11:39 by jhesso            #+#    #+#             */
-/*   Updated: 2022/10/31 18:21:52 by jhesso           ###   ########.fr       */
+/*   Updated: 2022/11/07 21:54:18 by jhesso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+// #include "libft.h"
 
 char	*ft_strdup(const char *s1)
 {

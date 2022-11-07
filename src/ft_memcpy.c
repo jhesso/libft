@@ -6,11 +6,11 @@
 /*   By: jhesso <jhesso@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 11:55:05 by jhesso            #+#    #+#             */
-/*   Updated: 2022/10/31 15:49:40 by jhesso           ###   ########.fr       */
+/*   Updated: 2022/11/07 21:54:18 by jhesso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+// #include "libft.h"
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {

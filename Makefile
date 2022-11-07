@@ -6,7 +6,7 @@
 #    By: jhesso <jhesso@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/29 15:34:36 by jhesso            #+#    #+#              #
-#    Updated: 2022/11/04 14:52:03 by jhesso           ###   ########.fr        #
+#    Updated: 2022/11/07 21:59:53 by jhesso           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,13 +22,13 @@ SRC = ./src/ft_atoi.c ./src/ft_bzero.c ./src/ft_calloc.c ./src/ft_isalnum.c ./sr
 			./src/ft_strjoin.c ./src/ft_putchar_fd.c ./src/ft_putstr_fd.c ./src/ft_putendl_fd.c\
 			./src/ft_putnbr_fd.c ./src/ft_itoa.c
 
-OBJ = ./obj/ft_atoi.o ./obj/ft_bzero.o ./obj/calloc.o ./obj/isalnum.o ./obj/isalpha.o\
-			./obj/isascii.o ./obj/isdigit.o ./obj/isprint.o ./obj/memchr.o\
-			./obj/memcmp.o ./obj/memcpy.o ./obj/memmove.o ./obj/memset.o ./obj/strchr.o\
-			./obj/strdup.o ./obj/strlcat.o ./obj/strlcpy.o ./obj/strlen.o ./obj/strncmp.o\
-			./obj/strnstr.o ./obj/strrchr.o ./obj/tolower.o ./obj/toupper.o ./obj/substr.o\
-			./obj/strjoin.o ./obj/putchar_fd.o ./obj/putstr_fd.o ./obj/putendl_fd.o\
-			./obj/putnbr_fd.o ./obj/itoa.o
+OBJ = ./obj/ft_atoi.o ./obj/ft_bzero.o ./obj/ft_calloc.o ./obj/ft_isalnum.o ./obj/ft_isalpha.o\
+			./obj/ft_isascii.o ./obj/ft_isdigit.o ./obj/ft_isprint.o ./obj/ft_memchr.o\
+			./obj/ft_memcmp.o ./obj/ft_memcpy.o ./obj/ft_memmove.o ./obj/ft_memset.o ./obj/ft_strchr.o\
+			./obj/ft_strdup.o ./obj/ft_strlcat.o ./obj/ft_strlcpy.o ./obj/ft_strlen.o ./obj/ft_strncmp.o\
+			./obj/ft_strnstr.o ./obj/ft_strrchr.o ./obj/ft_tolower.o ./obj/ft_toupper.o ./obj/ft_substr.o\
+			./obj/ft_strjoin.o ./obj/ft_putchar_fd.o ./obj/ft_putstr_fd.o ./obj/ft_putendl_fd.o\
+			./obj/ft_putnbr_fd.o ./obj/ft_itoa.o
 
 INCLUDE = libft.h
 
@@ -37,7 +37,7 @@ all: $(NAME)
 $(NAME): object lib
 
 object:
-	cc $(FLAGS) -c $(SRC)
+	cc $(FLAGS) -c $(SRC) -include ~/work/libft/includes/libft.h
 	mv *.o ./obj/
 
 lib:
