@@ -6,26 +6,28 @@
 /*   By: jhesso <jhesso@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 11:29:39 by jhesso            #+#    #+#             */
-/*   Updated: 2022/11/07 21:54:18 by jhesso           ###   ########.fr       */
+/*   Updated: 2022/11/08 18:52:05 by jhesso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "libft.h"
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {
 	char	*tmp;
+	char	a;
 
 	tmp = (char *)s;
+	a = (char)c;
 	while (*tmp != '\0')
 	{
-		if (*tmp == c)
-			return (tmp);
+		if (*tmp == a)
+			return ((char *)tmp);
 		tmp++;
 	}
-	if (c == '\0')
+	if (a == '\0')
 	{
-		return (tmp);
+		return ((char *)tmp);
 	}
 	return (NULL);
 }

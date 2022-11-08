@@ -6,11 +6,11 @@
 /*   By: jhesso <jhesso@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 17:23:35 by jhesso            #+#    #+#             */
-/*   Updated: 2022/11/07 21:54:18 by jhesso           ###   ########.fr       */
+/*   Updated: 2022/11/08 14:38:59 by jhesso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "libft.h"
+#include "libft.h"
 
 void	ft_putendl_fd(char *s, int fd)
 {

@@ -6,11 +6,11 @@
 /*   By: jhesso <jhesso@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 20:00:01 by jhesso            #+#    #+#             */
-/*   Updated: 2022/11/07 21:54:18 by jhesso           ###   ########.fr       */
+/*   Updated: 2022/11/08 14:38:59 by jhesso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "libft.h"
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
