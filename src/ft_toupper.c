@@ -6,11 +6,9 @@
 /*   By: jhesso <jhesso@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 12:15:45 by jhesso            #+#    #+#             */
-/*   Updated: 2022/11/08 14:38:59 by jhesso           ###   ########.fr       */
+/*   Updated: 2022/11/10 15:04:36 by jhesso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_toupper(int c)
 {
