@@ -6,95 +6,88 @@
 /*   By: jhesso <jhesso@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 14:18:01 by jhesso            #+#    #+#             */
-/*   Updated: 2022/11/08 21:33:34 by jhesso           ###   ########.fr       */
+/*   Updated: 2022/11/10 14:40:24 by jhesso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// char	*ft_strtrim(char const *s1, char const *set)
-// {
-// 	char	*ret;
-// 	int		len;
-// 	int		i;
-// 	int		j;
-
-// 	if (s1 == NULL)
-// 		return (NULL);
-// 	len = 0;
-// 	while (s1[i] != '\0')
-// 	{
-// 		if ()
-// 		i++;
-// 	}
-// 	i = 0;
-// 	j = 0;
-// }
-
-static int	calc_len2(char const *s1, char const *set, int i)
+static int	find_start(const char *s1, const char *set)
 {
+	int	i;
 	int	j;
 	int	match;
 
+	i = 0;
 	match = 0;
 	while (s1[i] != '\0')
 	{
 		j = 0;
 		while (set[j] != '\0')
-			if (s1[j] == set[j++])
-				match = -1;
-		if (match == -1)
-			break;
+		{
+			if (s1[i] != set[j] && j == (int)ft_strlen(set) - 1)
+				match = 1;
+			else if (s1[i] == set[j])
+				break ;
+			j++;
+		}
+		if (match == 1)
+			break ;
 		i++;
 	}
 	return (i);
 }
 
-static int	calc_len(char const *s1, char const *set)
+static int	find_end(const char *s1, const char *set)
 {
 	int	i;
 	int	j;
-	int	set_len;
 	int	match;
 
-	i = 0;
-	set_len = ft_strlen(set);
+	i = (int)ft_strlen(s1) - 1;
 	match = 0;
-	while (*s1 != '\0')
+	while (i >= 0)
 	{
 		j = 0;
 		while (set[j] != '\0')
 		{
-			if (s1[i] != set[j] && j == set_len - 1)
-				match = -1;
+			if (s1[i] != set[j] && j == (int)ft_strlen(set) - 1)
+				match = 1;
+			else if (s1[i] == set[j])
+				break ;
 			j++;
 		}
-		i++;
-		if (match == -1)
-			break;
+		if (match == 1)
+			break ;
+		i--;
 	}
-	return (calc_len2(s1, set, i));
+	return (i);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(const char *s1, const char *set)
 {
-	int		ret_len;
 	char	*ret;
-	int		j;
-	int		not_found;
+	int		start;
+	int		end;
+	int		size;
+	int		i;
 
-	ret_len = calc_len(s1, set);
-	ret = malloc(sizeof(ret) * ret_len + 1);
+	if (s1 == NULL)
+		return (NULL);
+	if (set == NULL || set[0] == '\0')
+		return ((char *)s1);
+	start = find_start(s1, set);
+	end = find_end(s1, set);
+	size = (int)ft_strlen(s1);
+	size = size - ((int)ft_strlen(s1) - (end + 1)) - start;
+	if (size < 0)
+		size = 0;
+	ret = malloc(sizeof(char) * size + 1);
 	if (ret == NULL)
 		return (NULL);
-	not_found = 1;
-	while (*s1 != '\0' && not_found == 1)
-	{
-		j = 0;
-		while (set[j] != '\0')
-		{
-			if (*s1 == set[j++])
-				s1++;
-		}
-	}
+	i = 0;
+	while (start <= end)
+		ret[i++] = s1[start++];
+	ret[i] = '\0';
+	return (ret);
 }

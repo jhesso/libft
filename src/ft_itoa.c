@@ -6,7 +6,7 @@
 /*   By: jhesso <jhesso@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 14:45:10 by jhesso            #+#    #+#             */
-/*   Updated: 2022/11/08 16:09:26 by jhesso           ###   ########.fr       */
+/*   Updated: 2022/11/09 17:11:13 by jhesso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,13 @@ static int	nlen(long int n)
 	return (len);
 }
 
+static char	*return_zero(char *str)
+{
+	str[0] = '0';
+	str[1] = '\0';
+	return (str);
+}
+
 char	*ft_itoa(int n)
 {
 	char		*str;
@@ -45,7 +52,7 @@ char	*ft_itoa(int n)
 		return (NULL);
 	str[i--] = '\0';
 	if (nbr == 0)
-		return ("0");
+		return (return_zero(str));
 	if (nbr < 0)
 	{
 		str[0] = '-';
