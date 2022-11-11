@@ -6,7 +6,7 @@
 /*   By: jhesso <jhesso@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 14:59:21 by jhesso            #+#    #+#             */
-/*   Updated: 2022/11/10 17:43:17 by jhesso           ###   ########.fr       */
+/*   Updated: 2022/11/11 15:25:15 by jhesso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ static int	get_amount_of_strings(char const *s, char c)
 	{
 		if (s[i] == c)
 		{
-			amount++;
-			while (s[i] == c)
+			while (s[i] == c && s[i + 1] != '\0')
 				i++;
+			amount++;
 		}
 		i++;
 	}
@@ -62,6 +62,7 @@ static char	**allocate_mem(char const *s, char c, int str_amount)
 	while (i < str_amount)
 	{
 		len = get_str_len(s, c, start);
+		printf("calculated length: %d for str: %d\n", len, i);
 		start = start + len; // calculate the starting point of the next string
 		ret[i] = malloc(sizeof(char *) * len + 1); // allocate memory for each string
 		if (ret[i] == NULL)
@@ -80,6 +81,8 @@ static char	**create_string(char const *s, char c, char **ret, int str_amount)
 	row = 0;
 	i = 0;
 	col = 0;
+	while (s[i] == c)
+		i++;
 	while (s[i] != '\0' && row < str_amount)
 	{
 		if (s[i] == c)

@@ -6,4 +6,4 @@ a.out
 libft.a
 notes.md
 *.o
-# copy_files.sh
+copy_files.sh

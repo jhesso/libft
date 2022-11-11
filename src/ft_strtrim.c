@@ -6,7 +6,7 @@
 /*   By: jhesso <jhesso@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 14:18:01 by jhesso            #+#    #+#             */
-/*   Updated: 2022/11/10 14:40:24 by jhesso           ###   ########.fr       */
+/*   Updated: 2022/11/11 15:00:35 by jhesso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ char	*ft_strtrim(const char *s1, const char *set)
 	if (s1 == NULL)
 		return (NULL);
 	if (set == NULL || set[0] == '\0')
-		return ((char *)s1);
+		return (ft_strdup(s1));
 	start = find_start(s1, set);
 	end = find_end(s1, set);
 	size = (int)ft_strlen(s1);
