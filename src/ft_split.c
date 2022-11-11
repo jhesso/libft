@@ -6,45 +6,73 @@
 /*   By: jhesso <jhesso@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 14:59:21 by jhesso            #+#    #+#             */
-/*   Updated: 2022/11/11 15:25:15 by jhesso           ###   ########.fr       */
+/*   Updated: 2022/11/12 01:24:53 by jhesso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "test/test.h"
+#include "test.h"
 
-static int	get_amount_of_strings(char const *s, char c)
+// static int	get_amount_of_words(char const *s, char c)
+// {
+// 	int	amount;
+// 	int	i;
+
+// 	amount = 0;
+// 	i = 0;
+// 	while (s[i] == c && s[i] != '\0')
+// 		i++;
+// 	while (s[i] != '\0')
+// 	{
+// 		if (s[i] == c)
+// 		{
+// 			printf("found delimiter starting at: %d\n", i);
+// 			while (s[i] == c && s[i + 1] != '\0')
+// 				i++;
+// 			amount++;
+// 		}
+// 		i++;
+// 	}
+// 	if (s[i] == '\0' && s[i - 1] == c)
+// 		amount--;
+// 	return (amount);
+// }
+
+static int	get_amount_of_words(char const *s, char c)
 {
 	int	amount;
 	int	i;
 
 	amount = 0;
 	i = 0;
-	while (s[i] == c && s[i] != '\0')
-		i++;
 	while (s[i] != '\0')
 	{
-		if (s[i] == c)
+		if (s[i] != c)
 		{
-			while (s[i] == c && s[i + 1] != '\0')
-				i++;
 			amount++;
+			while (s[i] != c && s[i + 1] != '\0')
+				i++;
 		}
 		i++;
 	}
-	if (s[i] == '\0' && s[i - 1] == c)
-		amount--;
 	return (amount);
 }
 
 static	int	get_str_len(char const *s, char c, int start)
 {
 	int	i;
+	int	len;
 
 	i = start;
-	while (s[i] != '\0' && s[i] != c)
+	while (s[i] == c)
 		i++;
-	return (i);
+	len = 0;
+	while (s[i] != '\0' && s[i] != c)
+	{
+		i++;
+		len++;
+	}
+	return (len);
 }
 
 static char	**allocate_mem(char const *s, char c, int str_amount)
@@ -63,6 +91,7 @@ static char	**allocate_mem(char const *s, char c, int str_amount)
 	{
 		len = get_str_len(s, c, start);
 		printf("calculated length: %d for str: %d\n", len, i);
+		// printf("starting position of word %d is: %d\n", i, start);
 		start = start + len; // calculate the starting point of the next string
 		ret[i] = malloc(sizeof(char *) * len + 1); // allocate memory for each string
 		if (ret[i] == NULL)
@@ -108,10 +137,10 @@ char	**ft_split(char const *s, char c)
 
 	if (s == NULL)
 		return (NULL);
-	printf("stepping into get_amount_of_strings\n");
-	str_amount = get_amount_of_strings(s, c);
-	printf("amount of strings calculated: %d\n", str_amount);
-	printf("stepping into allocate_mem\n");
+	// printf("stepping into get_amount_of_words\n");
+	str_amount = get_amount_of_words(s, c);
+	// printf("amount of words calculated: %d\n", str_amount);
+	// printf("stepping into allocate_mem\n");
 	ret = allocate_mem(s, c, str_amount);
 	printf("stepping into create_string\n");
 	ret = create_string(s, c, ret, str_amount);
