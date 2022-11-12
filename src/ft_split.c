@@ -6,7 +6,7 @@
 /*   By: jhesso <jhesso@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 14:59:21 by jhesso            #+#    #+#             */
-/*   Updated: 2022/11/12 01:24:53 by jhesso           ###   ########.fr       */
+/*   Updated: 2022/11/12 13:18:44 by jhesso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,11 +89,13 @@ static char	**allocate_mem(char const *s, char c, int str_amount)
 	start = 0;
 	while (i < str_amount)
 	{
+		while (s[start] == c && s[start] != '\0')
+			start++;
 		len = get_str_len(s, c, start);
-		printf("calculated length: %d for str: %d\n", len, i);
+		// printf("calculated length: %d for str: %d\n", len, i);
 		// printf("starting position of word %d is: %d\n", i, start);
 		start = start + len; // calculate the starting point of the next string
-		ret[i] = malloc(sizeof(char *) * len + 1); // allocate memory for each string
+		ret[i] = malloc(sizeof(**ret) * len + 1); // allocate memory for each string
 		if (ret[i] == NULL)
 			return (NULL);
 		i++;
