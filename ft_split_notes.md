@@ -26,8 +26,7 @@ with a NULL pointer.
 3. create new strings from s
 
 ## Known bugs:
-- the last string contains some garbage values
-- running to seg faults atm
+- if the last char of s is not c. the last char of the last word will be cut off. the break condition in create string needs to be adjusted somehow to account for this
 
 ## Attempts:
 - Trying to recreate get_amount_of_strings() in a way that it counts a word each time it finds a char that is not c. instead of everytime it finds c. (obviously will skip through the rest of the word untill we find c).

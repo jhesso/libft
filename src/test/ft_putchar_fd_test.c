@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split_test.c                                    :+:      :+:    :+:   */
+/*   ft_putchar_fd_test.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jhesso <jhesso@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/10 16:37:48 by jhesso            #+#    #+#             */
-/*   Updated: 2022/11/14 14:04:12 by jhesso           ###   ########.fr       */
+/*   Created: 2022/11/02 17:30:55 by jhesso            #+#    #+#             */
+/*   Updated: 2022/11/02 17:52:53 by jhesso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,11 @@
 
 int	main(void)
 {
-	char const	*s = "      split       this for   me  !       ";
-	// char const	*s = "      split       this for   me  !       ";
-	char		**ret;
-	int			row;
-	char		c;
+	char 	c;
+	int		fd;
 
-	c = ' ';
-	ret = ft_split(s, c);
-	row = 0;
-	printf("---\n");
-	while (ret[row] != NULL)
-	{
-		printf("%s\n", ret[row]);
-		row++;
-	}
-	printf("---\n");
+	c = 'a';
+	fd = open("42", O_WRONLY|O_CREAT, S_IRUSR|S_IWUSR);
+	ft_putchar_fd('a', fd);
 	return (0);
 }

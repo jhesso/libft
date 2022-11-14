@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split_test.c                                    :+:      :+:    :+:   */
+/*   ft_atoi_test.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jhesso <jhesso@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/10 16:37:48 by jhesso            #+#    #+#             */
-/*   Updated: 2022/11/14 14:04:12 by jhesso           ###   ########.fr       */
+/*   Created: 2022/10/28 22:17:44 by jhesso            #+#    #+#             */
+/*   Updated: 2022/10/31 16:07:55 by jhesso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,13 @@
 
 int	main(void)
 {
-	char const	*s = "      split       this for   me  !       ";
-	// char const	*s = "      split       this for   me  !       ";
-	char		**ret;
-	int			row;
-	char		c;
+	const char	*str = "\t\v\f\r\n \f-06050";
+	int			ret;
+	int			ft_ret;
 
-	c = ' ';
-	ret = ft_split(s, c);
-	row = 0;
-	printf("---\n");
-	while (ret[row] != NULL)
-	{
-		printf("%s\n", ret[row]);
-		row++;
-	}
-	printf("---\n");
+	ret = atoi(str);
+	ft_ret = ft_atoi(str);
+	printf("Return value of atoi(): %d\n", ret);
+	printf("Return value of ft_atoi(): %d\n", ft_ret);
 	return (0);
 }

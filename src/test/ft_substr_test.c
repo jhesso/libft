@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split_test.c                                    :+:      :+:    :+:   */
+/*   ft_substr_test.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jhesso <jhesso@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/10 16:37:48 by jhesso            #+#    #+#             */
-/*   Updated: 2022/11/14 14:04:12 by jhesso           ###   ########.fr       */
+/*   Created: 2022/10/31 12:12:25 by jhesso            #+#    #+#             */
+/*   Updated: 2022/11/02 12:33:55 by jhesso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,14 @@
 
 int	main(void)
 {
-	char const	*s = "      split       this for   me  !       ";
-	// char const	*s = "      split       this for   me  !       ";
-	char		**ret;
-	int			row;
-	char		c;
+	char			*s = NULL;
+	char			*sub;
+	unsigned int	start;
+	size_t			len;
 
-	c = ' ';
-	ret = ft_split(s, c);
-	row = 0;
-	printf("---\n");
-	while (ret[row] != NULL)
-	{
-		printf("%s\n", ret[row]);
-		row++;
-	}
-	printf("---\n");
+	start = 10;
+	len = 30;
+	sub = ft_substr(s, start, len);
+	printf("Result of ft_substr(): %s\n", sub);
 	return (0);
 }

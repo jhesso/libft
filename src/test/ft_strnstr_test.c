@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split_test.c                                    :+:      :+:    :+:   */
+/*   ft_strnstr_test.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jhesso <jhesso@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/10 16:37:48 by jhesso            #+#    #+#             */
-/*   Updated: 2022/11/14 14:04:12 by jhesso           ###   ########.fr       */
+/*   Created: 2022/10/28 21:57:30 by jhesso            #+#    #+#             */
+/*   Updated: 2022/11/04 15:06:36 by jhesso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,16 @@
 
 int	main(void)
 {
-	char const	*s = "      split       this for   me  !       ";
-	// char const	*s = "      split       this for   me  !       ";
-	char		**ret;
-	int			row;
-	char		c;
+	// const char	*haystack = "Lorem ipsum dolor sit amet";
+	// const char	*needle = "ipsumm";
+	size_t		len;
+	char		*ptr;
+	char		*ft_ptr;
 
-	c = ' ';
-	ret = ft_split(s, c);
-	row = 0;
-	printf("---\n");
-	while (ret[row] != NULL)
-	{
-		printf("%s\n", ret[row]);
-		row++;
-	}
-	printf("---\n");
+	len = 3;
+	ptr = strnstr("lorem ipsum dolor sit amet", "ipsumm", 30);
+	ft_ptr = ft_strnstr("lorem ipsum dolor sit amet", "ipsumm", 30);
+	printf("return of strnstr(): %s\n", ptr);
+	printf("return of ft_strnstr(): %s\n", ft_ptr);
 	return (0);
 }

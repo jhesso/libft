@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split_test.c                                    :+:      :+:    :+:   */
+/*   ft_strjoin_test.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jhesso <jhesso@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/10 16:37:48 by jhesso            #+#    #+#             */
-/*   Updated: 2022/11/14 14:04:12 by jhesso           ###   ########.fr       */
+/*   Created: 2022/10/31 13:22:37 by jhesso            #+#    #+#             */
+/*   Updated: 2022/10/31 13:27:33 by jhesso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,11 @@
 
 int	main(void)
 {
-	char const	*s = "      split       this for   me  !       ";
-	// char const	*s = "      split       this for   me  !       ";
-	char		**ret;
-	int			row;
-	char		c;
+	const char	*s1 = "";
+	const char	*s2 = "asdasdasd";
+	char		*ret;
 
-	c = ' ';
-	ret = ft_split(s, c);
-	row = 0;
-	printf("---\n");
-	while (ret[row] != NULL)
-	{
-		printf("%s\n", ret[row]);
-		row++;
-	}
-	printf("---\n");
+	ret = ft_strjoin(s1, s2);
+	printf("result of ft_strjoin(): %s\n", ret);
 	return (0);
 }

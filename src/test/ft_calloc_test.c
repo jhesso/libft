@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split_test.c                                    :+:      :+:    :+:   */
+/*   ft_calloc_test.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jhesso <jhesso@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/10 16:37:48 by jhesso            #+#    #+#             */
-/*   Updated: 2022/11/14 14:04:12 by jhesso           ###   ########.fr       */
+/*   Created: 2022/10/29 14:01:02 by jhesso            #+#    #+#             */
+/*   Updated: 2022/10/29 14:05:32 by jhesso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,16 @@
 
 int	main(void)
 {
-	char const	*s = "      split       this for   me  !       ";
-	// char const	*s = "      split       this for   me  !       ";
-	char		**ret;
-	int			row;
-	char		c;
+	size_t	count;
+	size_t	size;
+	char	*ptr;
+	char	*ft_ptr;
 
-	c = ' ';
-	ret = ft_split(s, c);
-	row = 0;
-	printf("---\n");
-	while (ret[row] != NULL)
-	{
-		printf("%s\n", ret[row]);
-		row++;
-	}
-	printf("---\n");
+	count = 5;
+	size = sizeof(char);
+	ptr = calloc(count, size);
+	ft_ptr = ft_calloc(count, size);
+	printf("size of allocated memory by calloc(): %zu\n", sizeof(ptr));
+	printf("size of allocated memory by ft_calloc(): %zu\n", sizeof(ft_ptr));
 	return (0);
 }
