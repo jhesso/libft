@@ -6,12 +6,15 @@
 /*   By: jhesso <jhesso@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 14:59:21 by jhesso            #+#    #+#             */
-/*   Updated: 2022/11/11 15:25:15 by jhesso           ###   ########.fr       */
+/*   Updated: 2022/11/14 13:24:20 by jhesso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "test/test.h"
+
+// Just leaving a note here as this is the last "version" where the function
+// doesn't crash but instead prints out garbage as the last value
 
 static int	get_amount_of_strings(char const *s, char c)
 {
