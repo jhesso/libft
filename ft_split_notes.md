@@ -26,12 +26,13 @@ with a NULL pointer.
 3. create new strings from s
 
 ## Known bugs:
-- the delimiter character is saved to the string X
-- the last part is not saved (maybe over written to NULL)
-- if more than one delimiter is between the words, that delimiter is included in the string X
-- the word counting has an obvious oversight. It counts the amount of delimiter characters. -> if more than one delimiter is betweem words, we count all of them as words meaning the amount calculater is too many compared to what we actually need.
-- the calculated length of each string returns as 0
-- we calculate one less strings than we need
 - the last string contains some garbage values
+- running to seg faults atm
 
-getting some segfaults atm. seems to count delimiters after the string ended.
+## Attempts:
+- Trying to recreate get_amount_of_strings() in a way that it counts a word each time it finds a char that is not c. instead of everytime it finds c. (obviously will skip through the rest of the word untill we find c).
+	- seems to work as expected.. keeping it for now
+- modified get_str_len() to skip the delim char (c) and created a new variable called len to actually return the length of the word instead of the index which is ever growing. get_str_len still isn't perfect but at least it now returns > 0
+	- moved the while loop to skip the delim char (c) into allocate_mem because the starting position was wrong otherwise.
+	- start pos and calculated size now seems to work as intended. :)
+- Now the next problem is most likely create_string() lack the motivation to fix it now... will try later :D

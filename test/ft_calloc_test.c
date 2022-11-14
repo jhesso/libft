@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.h                                             :+:      :+:    :+:   */
+/*   ft_calloc_test.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jhesso <jhesso@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 12:07:21 by jhesso            #+#    #+#             */
-/*   Updated: 2022/11/07 22:04:17 by jhesso           ###   ########.fr       */
+/*   Created: 2022/10/29 14:01:02 by jhesso            #+#    #+#             */
+/*   Updated: 2022/10/29 14:05:32 by jhesso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TEST_H
-# define TEST_H
+#include "test.h"
 
-# include <stdio.h>
-# include <ctype.h>
-# include <stdlib.h>
-# include <fcntl.h>
-# include "../includes/libft.h"
+int	main(void)
+{
+	size_t	count;
+	size_t	size;
+	char	*ptr;
+	char	*ft_ptr;
 
-void	ft_isalpha_test(void);
-void	ft_isdigit_test(void);
-void	ft_isalnum_test(void);
-
-#endif
+	count = 5;
+	size = sizeof(char);
+	ptr = calloc(count, size);
+	ft_ptr = ft_calloc(count, size);
+	printf("size of allocated memory by calloc(): %zu\n", sizeof(ptr));
+	printf("size of allocated memory by ft_calloc(): %zu\n", sizeof(ft_ptr));
+	return (0);
+}
