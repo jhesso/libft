@@ -6,7 +6,7 @@
 /*   By: jhesso <jhesso@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 16:37:48 by jhesso            #+#    #+#             */
-/*   Updated: 2022/11/14 14:04:12 by jhesso           ###   ########.fr       */
+/*   Updated: 2022/11/15 14:27:46 by jhesso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	main(void)
 {
-	char const	*s = "      split       this for   me  !       ";
+	char const	*s = "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse";
 	// char const	*s = "      split       this for   me  !       ";
 	char		**ret;
 	int			row;
@@ -30,5 +30,12 @@ int	main(void)
 		row++;
 	}
 	printf("---\n");
+
+	// char *s = "      split       this for   me  !       ";
+
+	// char **result = ft_split(s, ' ');
+	// if (!result)
+	// 	printf("TEST_SUCCESS\n");
+	// printf("TEST_FAILED\n");
 	return (0);
 }
