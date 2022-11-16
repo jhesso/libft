@@ -6,7 +6,7 @@
 /*   By: jhesso <jhesso@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 16:40:09 by jhesso            #+#    #+#             */
-/*   Updated: 2022/11/15 17:11:41 by jhesso           ###   ########.fr       */
+/*   Updated: 2022/11/16 11:48:07 by jhesso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,13 +49,20 @@ static	int	get_word_len(char const *s, char c, int start)
 	return (len);
 }
 
+static char	**free_allocated_strings(char **ret, int row)
+{
+	while (row >= 0)
+		free(ret[row--]);
+	free(ret);
+	return (NULL);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char			**ret;
 	unsigned int	i;
 	unsigned int	row;
 	unsigned int	word_count;
-	unsigned int	word_length;
 
 	if (s == NULL)
 		return (NULL);
@@ -67,12 +74,13 @@ char	**ft_split(char const *s, char c)
 	row = -1;
 	while (++row < word_count)
 	{
-		word_length = get_word_len(s, c, i);
 		while (s[i] == c)
 			i++;
 		if (s[i] != c)
-			ret[row] = ft_substr(s, i, word_length);
-		i = i + word_length;
+			ret[row] = ft_substr(s, i, get_word_len(s, c, i));
+		if (ret[row] == NULL)
+			return (free_allocated_strings(ret, row));
+		i = i + get_word_len(s, c, i);
 	}
 	ret[row] = NULL;
 	return (ret);

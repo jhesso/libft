@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jhesso <jhesso@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/29 13:45:54 by jhesso            #+#    #+#             */
-/*   Updated: 2022/11/16 16:38:51 by jhesso           ###   ########.fr       */
+/*   Created: 2022/11/16 13:48:49 by jhesso            #+#    #+#             */
+/*   Updated: 2022/11/16 14:48:22 by jhesso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	void	*ptr;
-
-	if (size == 0 || count == 0)
-		return (ft_calloc(1, 1));
-	if (count * size / size != count || count * size / count != size)
-		return (NULL);
-	ptr = malloc(count * size);
-	if (ptr == NULL)
-		return (NULL);
-	ft_bzero(ptr, count * size);
-	return (ptr);
+	if (*lst == NULL && new != NULL)
+		*lst = new;
+	else if (new != NULL)
+	{
+		new->next = *lst;
+		*lst = new;
+	}
 }

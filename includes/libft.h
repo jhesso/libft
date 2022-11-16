@@ -6,7 +6,7 @@
 /*   By: jhesso <jhesso@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 14:20:55 by jhesso            #+#    #+#             */
-/*   Updated: 2022/11/15 17:34:05 by jhesso           ###   ########.fr       */
+/*   Updated: 2022/11/16 19:16:20 by jhesso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,12 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
+int ft_lstsize(t_list *lst);
+t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstnew(void *content);
+void	ft_lstadd_back(t_list **lst, t_list *new);
+void	ft_lstadd_front(t_list **lst, t_list *new);
+void	ft_lstdelone(t_list *lst, void(*del)(void *));
+void	ft_lstclear(t_list **lst, void (*del)(void*));
 
 #endif
