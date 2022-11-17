@@ -6,7 +6,7 @@
 /*   By: jhesso <jhesso@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 11:09:56 by jhesso            #+#    #+#             */
-/*   Updated: 2022/11/10 15:01:48 by jhesso           ###   ########.fr       */
+/*   Updated: 2022/11/17 13:12:05 by jhesso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned char	*dst;
+	char	*dst;
 
-	dst = (unsigned char *)s;
+	dst = (char *)s;
 	while (n--)
-		*dst++ = (unsigned char)0;
+		*dst++ = (char)0;
 }
