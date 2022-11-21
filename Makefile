@@ -6,7 +6,7 @@
 #    By: jhesso <jhesso@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/29 15:34:36 by jhesso            #+#    #+#              #
-#    Updated: 2022/11/07 21:59:53 by jhesso           ###   ########.fr        #
+#    Updated: 2022/11/21 11:32:40 by jhesso           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,9 @@ SRC = ./src/ft_atoi.c ./src/ft_bzero.c ./src/ft_calloc.c ./src/ft_isalnum.c ./sr
 			./src/ft_strdup.c ./src/ft_strlcat.c ./src/ft_strlcpy.c ./src/ft_strlen.c ./src/ft_strncmp.c\
 			./src/ft_strnstr.c ./src/ft_strrchr.c ./src/ft_tolower.c ./src/ft_toupper.c ./src/ft_substr.c\
 			./src/ft_strjoin.c ./src/ft_putchar_fd.c ./src/ft_putstr_fd.c ./src/ft_putendl_fd.c\
-			./src/ft_putnbr_fd.c ./src/ft_itoa.c
+			./src/ft_putnbr_fd.c ./src/ft_itoa.c ./src/ft_lstadd_back.c ./src/ft_lstadd_front.c\
+			./src/ft_lstdelone.c ./src/ft_lstiter.c ./src/ft_lstlast.c ./src/ft_lstmap.c\
+			./src/ft_lstnew.c ./src/ft_lstsize.c ./src/ft_lstclear.c
 
 OBJ = ./obj/ft_atoi.o ./obj/ft_bzero.o ./obj/ft_calloc.o ./obj/ft_isalnum.o ./obj/ft_isalpha.o\
 			./obj/ft_isascii.o ./obj/ft_isdigit.o ./obj/ft_isprint.o ./obj/ft_memchr.o\
@@ -28,21 +30,21 @@ OBJ = ./obj/ft_atoi.o ./obj/ft_bzero.o ./obj/ft_calloc.o ./obj/ft_isalnum.o ./ob
 			./obj/ft_strdup.o ./obj/ft_strlcat.o ./obj/ft_strlcpy.o ./obj/ft_strlen.o ./obj/ft_strncmp.o\
 			./obj/ft_strnstr.o ./obj/ft_strrchr.o ./obj/ft_tolower.o ./obj/ft_toupper.o ./obj/ft_substr.o\
 			./obj/ft_strjoin.o ./obj/ft_putchar_fd.o ./obj/ft_putstr_fd.o ./obj/ft_putendl_fd.o\
-			./obj/ft_putnbr_fd.o ./obj/ft_itoa.o
+			./obj/ft_putnbr_fd.o ./obj/ft_itoa.o ./obj/ft_lstadd_back.o ./obj/ft_lstadd_front.o\
+			./obj/ft_lstdelone.o ./obj/ft_lstiter.o ./obj/ft_lstlast.o ./obj/ft_lstmap.o\
+			./obj/ft_lstnew.o ./obj/ft_lstsize.o ./obj/ft_lstclear.o
 
 INCLUDE = libft.h
 
 all: $(NAME)
 
-$(NAME): object lib
-
-object:
-	cc $(FLAGS) -c $(SRC) -include ~/work/libft/includes/libft.h
+$(NAME): object
+	cc $(FLAGS) -c $(SRC)
 	mv *.o ./obj/
+	ar rcs $(NAME) $(OBJ)
 
-lib:
-	ar rc $(NAME) $(OBJ)
-	ranlib $(NAME)
+object: obj
+	mkdir -p obj
 
 clean:
 	/bin/rm -f $(OBJ)
@@ -52,4 +54,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all object lib clean fclean re
+.PHONY: all clean fclean re object

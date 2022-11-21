@@ -6,11 +6,11 @@
 /*   By: jhesso <jhesso@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 15:47:34 by jhesso            #+#    #+#             */
-/*   Updated: 2022/11/17 14:35:42 by jhesso           ###   ########.fr       */
+/*   Updated: 2022/11/18 10:55:02 by jhesso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {

@@ -6,11 +6,11 @@
 /*   By: jhesso <jhesso@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 14:45:10 by jhesso            #+#    #+#             */
-/*   Updated: 2022/11/09 17:11:13 by jhesso           ###   ########.fr       */
+/*   Updated: 2022/11/18 10:55:02 by jhesso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 static int	nlen(long int n)
 {

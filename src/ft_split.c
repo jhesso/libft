@@ -6,11 +6,11 @@
 /*   By: jhesso <jhesso@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 16:40:09 by jhesso            #+#    #+#             */
-/*   Updated: 2022/11/16 11:48:07 by jhesso           ###   ########.fr       */
+/*   Updated: 2022/11/18 10:55:02 by jhesso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 static int	get_amount_of_words(char const *s, char c)
 {

@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum_test.c                                  :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jhesso <jhesso@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 14:24:35 by jhesso            #+#    #+#             */
-/*   Updated: 2022/10/25 14:32:58 by jhesso           ###   ########.fr       */
+/*   Created: 2022/11/16 13:48:49 by jhesso            #+#    #+#             */
+/*   Updated: 2022/11/18 10:55:02 by jhesso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "test.h"
+#include "../includes/libft.h"
 
-// int	ft_isalnum_test(char c)
-// {
-// 	return (ft_isalnum(c));
-// }
-
-int	main(void)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	char	c;
-	int		ret;
-
-	printf("enter a character: ");
-	scanf("%c", &c);
-	ret = ft_isalnum(c);
-	printf("Return value of ft_isalnum(%c) is: %d\n", c, ret);
-	return (0);
+	if (*lst == NULL && new != NULL)
+		*lst = new;
+	else if (new != NULL)
+	{
+		new->next = *lst;
+		*lst = new;
+	}
 }

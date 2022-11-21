@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc_test.c                                   :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jhesso <jhesso@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/29 14:01:02 by jhesso            #+#    #+#             */
-/*   Updated: 2022/10/29 14:05:32 by jhesso           ###   ########.fr       */
+/*   Created: 2022/11/16 14:32:42 by jhesso            #+#    #+#             */
+/*   Updated: 2022/11/18 10:55:02 by jhesso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "test.h"
+#include "../includes/libft.h"
 
-int	main(void)
+int	ft_lstsize(t_list *lst)
 {
-	size_t	count;
-	size_t	size;
-	char	*ptr;
-	char	*ft_ptr;
+	int	size;
 
-	count = 5;
-	size = sizeof(char);
-	ptr = calloc(count, size);
-	ft_ptr = ft_calloc(count, size);
-	printf("size of allocated memory by calloc(): %zu\n", sizeof(ptr));
-	printf("size of allocated memory by ft_calloc(): %zu\n", sizeof(ft_ptr));
-	return (0);
+	size = 0;
+	if (lst == NULL)
+		return (0);
+	while (lst != NULL)
+	{
+		lst = lst->next;
+		size++;
+	}
+	return (size);
 }
