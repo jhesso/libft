@@ -2,4 +2,4 @@
 My own libC to be used in future 42 school projects.
 
 - Status: Finished
-- Result: 125%
+- Grade: 125%
