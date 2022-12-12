@@ -3,3 +3,7 @@ libft.a
 *.o
 .vscode
 libft.code-workspace
+a.out
+.gitignore
+*/*main.c
+main.c

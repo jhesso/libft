@@ -6,24 +6,20 @@
 /*   By: jhesso <jhesso@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 17:23:35 by jhesso            #+#    #+#             */
-/*   Updated: 2022/11/18 10:55:02 by jhesso           ###   ########.fr       */
+/*   Updated: 2022/12/12 22:00:29 by jhesso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-void	ft_putendl_fd(char *s, int fd)
+int	ft_putendl_fd(char *s, int fd)
 {
-	int		i;
+	int	ret;
 
+	ret = 0;
 	if (s != NULL)
-	{
-		i = 0;
-		while (s[i] != '\0')
-		{
-			ft_putchar_fd(s[i], fd);
-			i++;
-		}
-	}
+		ret = ft_putstr_fd(s, fd);
 	ft_putchar_fd('\n', fd);
+	ret++;
+	return (ret);
 }
