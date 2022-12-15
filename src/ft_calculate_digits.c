@@ -6,7 +6,11 @@
 /*   By: jhesso <jhesso@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 15:49:25 by jhesso            #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2022/12/15 15:54:38 by jhesso           ###   ########.fr       */
+=======
+/*   Updated: 2022/12/15 15:52:31 by jhesso           ###   ########.fr       */
+>>>>>>> 564f06070bad48053da92d67b011822e62332561
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +20,15 @@
 ** a string that contains an int
 */
 
+<<<<<<< HEAD
 long	ft_calculate_digits(unsigned long int nbr)
 {
 	long	len;
+=======
+int	ft_calculate_digits(unsigned long int nbr)
+{
+	int	len;
+>>>>>>> 564f06070bad48053da92d67b011822e62332561
 
 	len = 0;
 	if (nbr == 0)
