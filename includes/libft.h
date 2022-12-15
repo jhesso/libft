@@ -6,7 +6,7 @@
 /*   By: jhesso <jhesso@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 14:20:55 by jhesso            #+#    #+#             */
-/*   Updated: 2022/12/12 22:09:17 by jhesso           ###   ########.fr       */
+/*   Updated: 2022/12/15 16:34:19 by jhesso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ int		ft_putendl_fd(char *s, int fd);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 
+long	ft_calculate_digits(unsigned long int nbr);
+
 void	ft_bzero(void *s, size_t n);
 void	ft_putnbr_fd(int n, int fd);
 void	*ft_calloc(size_t count, size_t size);
@@ -60,6 +62,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 
 char	*ft_itoa(int n);
+char	*ft_strrev(char *str);
 char	*get_next_line(int fd);
 char	*ft_strdup(const char *s1);
 char	*ft_strchr(const char *s, int c);

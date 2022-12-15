@@ -6,7 +6,7 @@
 #    By: jhesso <jhesso@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/29 15:34:36 by jhesso            #+#    #+#              #
-#    Updated: 2022/12/02 16:10:20 by jhesso           ###   ########.fr        #
+#    Updated: 2022/12/15 19:59:09 by jhesso           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,8 @@ SRC = ./src/ft_atoi.c ./src/ft_bzero.c ./src/ft_calloc.c ./src/ft_isalnum.c ./sr
 			./src/ft_strjoin.c ./src/ft_putchar_fd.c ./src/ft_putstr_fd.c ./src/ft_putendl_fd.c\
 			./src/ft_putnbr_fd.c ./src/ft_itoa.c ./src/ft_lstadd_back.c ./src/ft_lstadd_front.c\
 			./src/ft_lstdelone.c ./src/ft_lstiter.c ./src/ft_lstlast.c ./src/ft_lstmap.c\
-			./src/ft_lstnew.c ./src/ft_lstsize.c ./src/ft_lstclear.c ./src/get_next_line.c
+			./src/ft_lstnew.c ./src/ft_lstsize.c ./src/ft_lstclear.c ./src/get_next_line.c\
+			./src/ft_calculate_digits.c ./src/ft_strrev.c
 
 OBJ = ./obj/ft_atoi.o ./obj/ft_bzero.o ./obj/ft_calloc.o ./obj/ft_isalnum.o ./obj/ft_isalpha.o\
 			./obj/ft_isascii.o ./obj/ft_isdigit.o ./obj/ft_isprint.o ./obj/ft_memchr.o\
@@ -32,25 +33,26 @@ OBJ = ./obj/ft_atoi.o ./obj/ft_bzero.o ./obj/ft_calloc.o ./obj/ft_isalnum.o ./ob
 			./obj/ft_strjoin.o ./obj/ft_putchar_fd.o ./obj/ft_putstr_fd.o ./obj/ft_putendl_fd.o\
 			./obj/ft_putnbr_fd.o ./obj/ft_itoa.o ./obj/ft_lstadd_back.o ./obj/ft_lstadd_front.o\
 			./obj/ft_lstdelone.o ./obj/ft_lstiter.o ./obj/ft_lstlast.o ./obj/ft_lstmap.o\
-			./obj/ft_lstnew.o ./obj/ft_lstsize.o ./obj/ft_lstclear.o ./obj/get_next_line.o
+			./obj/ft_lstnew.o ./obj/ft_lstsize.o ./obj/ft_lstclear.o ./obj/get_next_line.o\
+			./obj/ft_calculate_digits.o ./obj/ft_strrev.o
 
 INCLUDE = libft.h
 
 all: $(NAME)
 
 $(NAME): object
-	cc $(FLAGS) -c $(SRC)
-	mv *.o ./obj/
-	ar rcs $(NAME) $(OBJ)
+	@cc $(FLAGS) -c $(SRC)
+	@mv *.o ./obj/
+	@ar rcs $(NAME) $(OBJ)
 
 object: obj
-	mkdir -p obj
+	@mkdir -p obj
 
 clean:
-	/bin/rm -f $(OBJ)
+	@/bin/rm -f $(OBJ)
 
 fclean: clean
-	/bin/rm -f $(NAME)
+	@/bin/rm -f $(NAME)
 
 re: fclean all
 
